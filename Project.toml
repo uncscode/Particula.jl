@@ -3,6 +3,10 @@ uuid = "1e66786a-ccb0-421b-a51f-a7d4cc59815c"
 authors = ["particula contributors"]
 version = "0.0.1"
 
+[deps]
+Revise = "295af30f-e4ad-537b-8983-00126c2a3abe"
+Unitful = "1986cc42-f94f-5a68-af5c-568840ba703d"
+
 [compat]
 julia = "1"
 
