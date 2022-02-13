@@ -1,3 +1,1 @@
-## *Particula.jl*
-
-particula in julia.
+# Particula
