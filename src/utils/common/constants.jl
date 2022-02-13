@@ -28,9 +28,9 @@ const VACUUM_PERMITTIVITY = 8.85418782e-12 * u"F" / u"m"
 # permittivity of air
 const ELECTRIC_PERMITTIVITY = RELATIVE_PERMITTIVITY_AIR * VACUUM_PERMITTIVITY
 
+# these values are used to calculate the dynamic viscosity of air
 # viscosity of air at 273.15 K
 const REF_VISCOSITY_AIR = 1.716e-5 * u"Pa" * u"s"
 const REF_TEMPERATURE = 273.15 * u"K"
 const SUTHERLAND_CONSTANT = 110.4 * u"K"
-
 const MOLECULAR_WEIGHT_AIR = 28.9644 * u"g" / u"mol" |> upreferred
