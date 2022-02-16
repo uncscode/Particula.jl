@@ -1,6 +1,6 @@
 module Particula
 
-include("utils/common/constants.jl")
+include("constants.jl")
 
 
 # Write your package code here.

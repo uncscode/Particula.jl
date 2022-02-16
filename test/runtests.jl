@@ -1,7 +1,7 @@
 using Particula
 using Test
 
-include("utils/common/runconstants.jl")
+include("testconstants.jl")
 
 # @testset "Particula.jl" begin
 #     # Write your tests here.
