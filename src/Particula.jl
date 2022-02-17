@@ -1,6 +1,7 @@
 module Particula
 
 include("constants.jl")
+include("dviscosity.jl")
 
 
 # Write your package code here.
