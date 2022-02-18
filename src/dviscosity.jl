@@ -18,6 +18,7 @@ using Unitful
 include("constants.jl")
 
 function dviscosity(temp)
+    if typeof(temp) = 
     return (
         REF_VISCOSITY_AIR * (temp/REF_TEMPERATURE)^(3/2) * (REF_TEMPERATURE + SUTHERLAND_CONSTANT) / (temp + SUTHERLAND_CONSTANT)
     )
