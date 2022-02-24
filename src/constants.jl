@@ -38,5 +38,6 @@ const ELECTRIC_PERMITTIVITY = RELATIVE_PERMITTIVITY_AIR * VACUUM_PERMITTIVITY
 # Standard temperature and pressure (273.15 K and 101325 Pa)
 const REF_VISCOSITY_AIR_STP = 1.716e-5 * u"Pa" * u"s"
 const REF_TEMPERATURE_STP = 273.15 * u"K"
+
 const SUTHERLAND_CONSTANT = 110.4 * u"K"
 const MOLECULAR_WEIGHT_AIR = 28.9644 * u"g" / u"mol" |> upreferred
