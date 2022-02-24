@@ -3,12 +3,12 @@
 
 using Unitful
 
-function in_temperature(temperature)
+function ℞T(T)
 
-    if temperature |> upreferred |> unit == u"K"
-        return temperature |> upreferred
-    elseif temperature |> upreferred |> unit == Unitful.NoUnits
-        return temperature * u"K"
+    if T |> upreferred |> unit == u"K"
+        return T |> upreferred
+    elseif T |> upreferred |> unit == Unitful.NoUnits
+        return T * u"K"
     else
         throw(
             ArgumentError(
@@ -21,12 +21,12 @@ function in_temperature(temperature)
 end
 
 
-function in_viscosity(viscosity)
+function ℞µ(µ)
 
-    if viscosity |> upreferred |> unit == u"kg"/u"m"/u"s"
-        return viscosity |> upreferred
-    elseif viscosity |> upreferred |> unit == Unitful.NoUnits
-        return viscosity * u"kg"/u"m"/u"s"
+    if µ |> upreferred |> unit == u"kg" / u"m" / u"s"
+        return µ |> upreferred
+    elseif µ |> upreferred |> unit == Unitful.NoUnits
+        return µ * u"kg" / u"m" / u"s"
     else
         throw(
             ArgumentError(

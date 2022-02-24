@@ -2,20 +2,12 @@
 """
 
 import Particula as P
-using Unitful
-using Test
+using Unitful, Test
 
 @testset "constants.jl" begin
 
-    @test P.GAS_CONSTANT ==
-          P.BOLTZMANN_CONSTANT *
-          P.AVOGADRO_NUMBER
-
-    @test unit(P.GAS_CONSTANT) ==
-          unit(P.BOLTZMANN_CONSTANT) *
-          unit(P.AVOGADRO_NUMBER)
-
-    @test unit(P.BOLTZMANN_CONSTANT) ==
-          u"m^2" * u"kg" / u"s^2" / u"K"
+    @test P.R == P.k * P.Nₐ
+    @test unit(P.R) == unit(P.k) * unit(P.Nₐ)
+    @test unit(P.k) == u"m^2" * u"kg" / u"s^2" / u"K"
 
 end

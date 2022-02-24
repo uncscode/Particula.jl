@@ -17,21 +17,12 @@ using Unitful
 
 include("constants.jl")
 
-function dviscosity(;
-    temperature = 298.15,
-    reference_viscosity = REF_VISCOSITY_AIR_STP,
-    reference_temperature = REF_TEMPERATURE_STP,
-)
+function µ(; T = 298.15, µ₀ = µ₀_air_stp, T₀ = T₀_air_stp)
 
-    temperature = in_temperature(temperature)
-    reference_viscosity = in_viscosity(reference_viscosity)
-    reference_temperature = in_temperature(reference_temperature)
+    T = ℞T(T)
+    µ₀ = ℞µ(µ₀)
+    T₀ = ℞T(T₀)
 
-    return (
-        reference_viscosity *
-        (temperature / reference_temperature)^(3 / 2) *
-        (reference_temperature + SUTHERLAND_CONSTANT) /
-        (temperature + SUTHERLAND_CONSTANT)
-    ) |> upreferred
+    return µ₀ * (T / T₀)^(3 / 2) * (T₀ + Sₖ) / (T + Sₖ) |> upreferred
 
 end

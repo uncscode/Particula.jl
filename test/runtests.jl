@@ -1,10 +1,8 @@
-using Particula
-using Test
-using Unitful
+using Particula, Unitful, Test
 
 @testset "Particula.jl" begin
     # Write your tests here.
-    @test Particula.GAS_CONSTANT |> ustrip >= 0
+    @test Particula.R |> ustrip >= 0
 
 
 end
