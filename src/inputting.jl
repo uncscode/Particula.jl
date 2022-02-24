@@ -12,8 +12,8 @@ function ℞T(T)
     else
         throw(
             ArgumentError(
-                "Temperature must be in kelvin or equivlanet;
-                      if no units are given, it will be assumed kelvin."
+                "Temperature must be in kelvin (K) or equivlanet;
+                      if no units are given, it will be assumed K."
             )
         )
     end
@@ -30,7 +30,7 @@ function ℞µ(µ)
     else
         throw(
             ArgumentError(
-                "Viscosity must be in Pascal-seconds or equivlanet;
+                "Viscosity must be in kg/m/s (Pa*s) or equivlanet;
                       if no units are given, it will be assumed kg/m/s."
             )
         )
