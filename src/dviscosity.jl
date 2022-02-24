@@ -17,9 +17,21 @@ using Unitful
 
 include("constants.jl")
 
-function dviscosity(temp)
-    if typeof(temp) = 
+function dviscosity(;
+    temperature = 298.15,
+    reference_viscosity = REF_VISCOSITY_AIR_STP,
+    reference_temperature = REF_TEMPERATURE_STP,
+)
+
+    temperature = in_temperature(temperature)
+    reference_viscosity = in_viscosity(reference_viscosity)
+    reference_temperature = in_temperature(reference_temperature)
+
     return (
-        REF_VISCOSITY_AIR * (temp/REF_TEMPERATURE)^(3/2) * (REF_TEMPERATURE + SUTHERLAND_CONSTANT) / (temp + SUTHERLAND_CONSTANT)
-    )
+        reference_viscosity *
+        (temperature / reference_temperature)^(3 / 2) *
+        (reference_temperature + SUTHERLAND_CONSTANT) /
+        (temperature + SUTHERLAND_CONSTANT)
+    ) |> upreferred
+
 end

@@ -1,10 +1,13 @@
 using Particula
 using Test
+using Unitful
 
-include("testconstants.jl")
+@testset "Particula.jl" begin
+    # Write your tests here.
+    @test Particula.GAS_CONSTANT |> ustrip >= 0
 
-# @testset "Particula.jl" begin
-#     # Write your tests here.
-#     @test Particula.GAS_CONSTANT |> ustrip >= 0
+end
 
-# end
+include("test_constants.jl")
+include("test_dviscosity.jl")
+include("test_inputting.jl")
