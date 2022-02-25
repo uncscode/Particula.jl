@@ -8,5 +8,6 @@ using Particula, Unitful, Test
 end
 
 include("test_constants.jl")
-include("test_dviscosity.jl")
 include("test_inputting.jl")
+include("test_dviscosity.jl")
+include("test_meanfreepath.jl")

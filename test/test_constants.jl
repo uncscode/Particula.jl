@@ -4,7 +4,7 @@
 import Particula as P
 using Unitful, Test
 
-@testset "constants.jl" begin
+@testset "consts" begin
 
     @test P.R == P.k * P.Nₐ
     @test unit(P.R) == unit(P.k) * unit(P.Nₐ)

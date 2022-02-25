@@ -2,9 +2,9 @@ module Particula
 
 using Unitful
 
-include("dviscosity.jl")
 include("inputting.jl")
-
+include("dviscosity.jl")
+include("meanfreepath.jl")
 
 # Write your package code here.
 function greet()

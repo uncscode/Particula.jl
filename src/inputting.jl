@@ -48,3 +48,23 @@ function ℞µ(µ)
         throw(ArgumentError("Input: in kg/m/s (or equivalent) or unitless"))
     end
 end
+
+function ℞p(p)
+    if unit.(upreferred.(p)) == unit.(ustrip.(p) .* u"kg/m/s^2")
+        return p .|> upreferred
+    elseif unit.(upreferred.(p)) == unit.(ustrip.(p) .* Unitful.NoUnits)
+        return p .* u"kg/m/s^2"
+    else
+        throw(ArgumentError("Input: in kg/m/s^2 (or equivalent) or unitless"))
+    end
+end
+
+function ℞M_wt(M_wt)
+    if unit.(upreferred.(M_wt)) == unit.(ustrip.(M_wt) .* u"kg/mol")
+        return M_wt .|> upreferred
+    elseif unit.(upreferred.(M_wt)) == unit.(ustrip.(M_wt) .* Unitful.NoUnits)
+        return M_wt .* u"kg/mol"
+    else
+        throw(ArgumentError("Input: in kg/mol (or equivalent) or unitless"))
+    end
+end
