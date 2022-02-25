@@ -4,11 +4,9 @@
 
 using Unitful
 
-include("inputting.jl")
-include("constants.jl")
-include("dviscosity.jl")
-
-_ƒμ = μ
+using Particula: M_air, μ₀_air_stp, T₀_air_stp
+using Particula: ℞T, ℞μ, ℞p
+using Particula: μ as _ƒμ
 
 """
     λg(T, p, M_wt, ..., μ, µ₀, T₀, ...)
@@ -49,7 +47,6 @@ function λg(; kwargs...)
     T = ℞T(get(kwargs, :T, 298.15))
     p = ℞p(get(kwargs, :p, 101325))
     M_wt = ℞M_wt(get(kwargs, :M_wt, M_air))
-    μ = _ƒμ(; kwargs...)
-    μ = ℞μ(get(kwargs, :μ, μ))
-    return (2 * μ / p) / (8 * M_wt / (π * R * T)).^ 0.5 |> upreferred
+    μ = ℞μ(get(kwargs, :μ, _ƒμ(; kwargs...)))
+    return (2 .* μ ./ p) ./ (8 .* M_wt ./ (π .* R .* T)) .^ 0.5 .|> upreferred
 end

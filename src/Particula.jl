@@ -2,6 +2,7 @@ module Particula
 
 using Unitful
 
+include("constants.jl")
 include("inputting.jl")
 include("dviscosity.jl")
 include("meanfreepath.jl")

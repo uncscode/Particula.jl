@@ -16,7 +16,8 @@ assuming ideal gas behavior, as a function of temperature.
 
 using Unitful
 
-include("constants.jl")
+using Particula: µ₀_air_stp, T₀_air_stp
+using Particula: ℞T, ℞μ
 
 """
     µ(T, µ₀, T₀, ...)
@@ -48,5 +49,6 @@ function µ(; kwargs...)
     T = ℞T(get(kwargs, :T, 298.15))
     µ₀ = ℞µ(get(kwargs, :µ₀, µ₀_air_stp))
     T₀ = ℞T(get(kwargs, :T₀, T₀_air_stp))
-    return µ₀ * (T / T₀)^(3 / 2) * (T₀ + Sₖ) / (T + Sₖ) |> upreferred
+    return µ₀ .* (T ./ T₀) .^ (3 / 2) .* (T₀ .+ Sₖ) ./ (T .+ Sₖ) .|> upreferred
 end
+
