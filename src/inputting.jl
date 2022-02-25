@@ -14,7 +14,7 @@ It accepts vectors, but will throw an error if elements have different units.
 ```julia-repl
 julia> ℞T(300)
 300 K
-````
+```
 """
 
 using Unitful
