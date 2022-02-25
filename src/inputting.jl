@@ -25,9 +25,9 @@ using Unitful
 Ensure T is in K.
 """
 function ℞T(T)
-    if unit.(upreferred.(T)) == unit.(ustrip.(T) * u"K")
+    if unit.(upreferred.(T)) == unit.(ustrip.(T) .* u"K")
         return T .|> upreferred
-    elseif unit.(upreferred.(T)) == unit.(ustrip.(T) * Unitful.NoUnits)
+    elseif unit.(upreferred.(T)) == unit.(ustrip.(T) .* Unitful.NoUnits)
         return T .* u"K"
     else
         throw(ArgumentError("Input: in K (or equivalent) or unitless"))
@@ -40,10 +40,10 @@ end
 Ensure µ is in kg/m/s.
 """
 function ℞µ(µ)
-    if unit.(upreferred.(µ)) == unit.(ustrip.(µ) * u"kg" / u"m" / u"s")
+    if unit.(upreferred.(µ)) == unit.(ustrip.(µ) .* u"kg" ./ u"m" ./ u"s")
         return µ .|> upreferred
-    elseif unit.(upreferred.(µ)) == unit.(ustrip.(µ) * Unitful.NoUnits)
-        return µ .* u"kg" / u"m" / u"s"
+    elseif unit.(upreferred.(µ)) == unit.(ustrip.(µ) .* Unitful.NoUnits)
+        return µ .* u"kg" ./ u"m" ./ u"s"
     else
         throw(ArgumentError("Input: in kg/m/s (or equivalent) or unitless"))
     end
