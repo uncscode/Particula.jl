@@ -1,8 +1,10 @@
-using Particula, Unitful, Test
+using Unitful, Test
+
+import Particula as P
 
 @testset "Particula.jl" begin
     # Write your tests here.
-    @test Particula.R |> ustrip >= 0
+    @test P.R |> ustrip >= 0
 
 
 end

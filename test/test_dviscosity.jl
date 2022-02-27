@@ -1,8 +1,9 @@
 """ testing the viscosity routine
 """
 
-import Particula as P
 using Unitful, Test
+
+import Particula as P
 
 @testset "µ" begin
     @test P.µ() |> upreferred |> unit == u"kg/m/s"

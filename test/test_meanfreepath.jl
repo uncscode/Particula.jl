@@ -2,8 +2,9 @@
     testing the mean free path calculation
 """
 
-import Particula as P
 using Unitful, Test
+
+import Particula as P
 
 @testset "λg" begin
     @test P.λg() |> upreferred |> unit == u"m"

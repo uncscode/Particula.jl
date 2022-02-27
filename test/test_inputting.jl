@@ -1,8 +1,9 @@
 """ testing the input handling
 """
 
-import Particula as P
 using Unitful, Test
+
+import Particula as P
 
 @testset "℞X" begin
 

@@ -13,21 +13,18 @@ using Particula: μ as _ƒμ
 
 Calculate the mean free path based on gas kinetic theory.
 
-Inputs:
-T       Temperature             [K]         (default: 298.15)
-p       Pressure                [Pa]        (default: 101325)
-M_wt    Molar mass              [g/mol]     (default: M_wt_air)
-...
-μ       Viscosity               [kg/m/s]    (default: μ(T, μ₀, T₀))
+# Inputs:
+    T       Temperature     K       default: 298.15
+    p       Pressure        Pa      default: 101325
+    M_wt    Molar mass      kg/mol  default: M_wt_air
+    ...
+    μ       Viscosity       kg/m/s  default: μ(T, μ₀, T₀)
 
-Output:
-        Mean free path          [m]
-
-Output:
-    Dynamic viscosity       [kg/m/s]
+# Output:
+            Mean free path  m
 
 # Notes:
-* M_wt_air comes from the the constants.jl file.
+* `M_wt_air` comes from the the constants.jl file.
 * Two additional inputs are possible:
     µ₀  Reference viscosity     [kg/m/s]    (default: µ₀_air_stp)
     T₀  Reference temperature   [K]         (default: T₀_air_stp)
@@ -35,7 +32,7 @@ Output:
 * μ(T, μ₀, T₀) is defined in dviscosity.jl
 
 # Examples:
-```julia-repl
+```jldoctest
 julia> λg()
 6.647984982685411e-8 m
 julia> using Unitful
